@@ -81,5 +81,4 @@
     </script>
 @endif
 @yield('script')
-
 </html>

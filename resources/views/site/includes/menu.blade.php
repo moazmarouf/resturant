@@ -25,6 +25,6 @@
 
         <a href=""> <span> <img src="{{URL::to('assets/site/images/menu-contact.png')}}" alt="img" class="img-fluid"> </span> تواصل معنا </a>
 
-        <a href=""> <span> <img src="{{URL::to('assets/site/images/menu-logout.png')}}" alt="img" class="img-fluid"> </span> تسجيل دخول / تسجيل خروج </a>
+        <a href="{{route('users.logout')}}"> <span> <img src="{{URL::to('assets/site/images/menu-logout.png')}}" alt="img" class="img-fluid"> </span> تسجيل دخول / تسجيل خروج </a>
     </div>
 </div>

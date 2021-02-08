@@ -16,11 +16,21 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('phone');
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->boolean('is_Admin')->default(0);
+            $table->string('phone_without_iso')->nullable();
+            $table->boolean('isActive')->default(1);
+            $table->boolean('isConfirmed')->default(1);
+            $table->string('v_code')->nullable();
+            $table->string('avatar')->default('default.png');
+            $table->text('address')->nullable();
+            $table->foreignIdFor(\App\Models\Iso::class)->unsigned()->default(1)->onDelete('cascade');
+
             $table->timestamps();
+
         });
     }
 
